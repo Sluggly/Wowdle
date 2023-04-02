@@ -337,7 +337,7 @@ function guessCharacter() {
         newBoxLine.appendChild(createBox(character.playerClass,selectedCharacter.playerClass));
         newBoxLine.appendChild(createBox(character.killable,selectedCharacter.killable));
         newBoxLine.appendChild(createBox(character.content,selectedCharacter.content));
-        guessZone.appendChild(newBoxLine);
+        guessZone.insertBefore(newBoxLine, guessZone.firstChild);
         for (let i=0;i<characterList.length;i++) {
             if (characterList[i] == character) {
                 characterList.splice(i,1);
@@ -346,4 +346,5 @@ function guessCharacter() {
         }
         delete characterDict[character.name.toLowerCase().trim()];
     }
+    document.getElementById("searchGuess").value = "";
 }

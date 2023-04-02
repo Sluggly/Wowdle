@@ -1,0 +1,214 @@
+body {
+    background-image: url('../src/wallpaper2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+/* Styles for the search bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 500px;
+    margin: 0 auto;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin-top: 40vh;
+}
+  
+.search-bar input[type="text"] {
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    background-color: #333;
+    color: white;
+}
+
+.search-bar button {
+    font-size: 20px;
+    padding: 0 20px;
+    height: 100%;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+}
+
+#selection-menu {
+    max-height: 200px; /* limit the height of the selection menu to 200px */
+    overflow-y: scroll; /* add a vertical scroll bar when the selection menu overflows */
+    border: none;
+}
+
+#selection-menu li {
+    font-size: 16px;
+    padding: 5px;
+    background-color: #777575;
+}
+
+#selection-menu li img {
+    width: 40px;
+    height: 40px;
+}
+
+#selection-menu li:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #868585;
+}
+
+/* Change the color of the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    background-color: #6b6a6a;
+}
+
+/* Hide the scrollbar buttons */
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+#guess-button {
+    border-radius: 0;
+}
+
+/* Styles for the character information boxes */
+.character-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.character-info-headers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    max-height: 50px;
+}
+
+.character-info-headers h2{
+    width: 80px;
+    height: 80px;
+    color: white;
+    font-size: 16px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+
+.info-box {
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.info-box p {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0;
+    flex-shrink: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.info-box.true {
+    border-color: rgb(230, 182, 182);
+    background-color: rgb(14, 165, 14);
+}
+
+.info-box.false {
+    border-color: rgb(230, 182, 182);
+    background-color: red;
+}
+
+.info-box.partial {
+    border-color: rgb(230, 182, 182);
+    background-color: orange;
+}
+
+.selection-menu {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    display: none;
+}
+
+.selection-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.selection-menu li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.selection-menu li img {
+    margin-right: 10px;
+}
+
+.selection-menu li:hover {
+    background-color: #f2f2f2;
+}
+
+.selection-menu.show {
+    display: block;
+}

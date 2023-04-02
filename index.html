@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/style.css">
+        <title>Wowdle</title>
+	</head>
+	<body>
+	<div class="container">
+		<div id="mainPage">
+			<div class="search-bar">
+				<input type="text" id="searchGuess" oninput="updateSearch(this.value)" placeholder="Search a World of Warcraft Character."/>
+				<button id="guess-button" onclick="guessCharacter()">Guess</button>
+				<div id="selection-menu" class="selection-menu">
+				</div>
+			</div>
+			<div class="character-info-headers">
+				<h2>Character</h2>
+				<h2>Race</h2>
+				<h2>Faction</h2>
+				<h2>Gender</h2>
+				<h2>Age</h2>
+				<h2>Death Count</h2>
+				<h2>Zone</h2>
+				<h2>IGA</h2>
+				<h2>Class</h2>
+				<h2>Killable</h2>
+				<h2>Content</h2>
+			</div>
+			<div id="guessZone">
+			</div>
+		</div>
+		<br>
+		<button id="resetSeed" onclick="resetSeed()">Reset Seed</button>
+	</div>
+	<script src="js/script.js"></script>
+	</body>
+</html>

@@ -217,7 +217,6 @@ var randValue = rand();
 var numero = Math.trunc(randValue*1000)%characterList.length;
 
 var selectedCharacter = characterList[numero];
-console.log(selectedCharacter);
 
 function resetSeed() {
     characterDict = [];
@@ -230,7 +229,6 @@ function resetSeed() {
     randValue = rand();
     numero = Math.trunc(randValue*1000)%characterList.length;
     selectedCharacter = characterList[numero];
-    console.log(selectedCharacter);
 }
 
 function updateSearch(searchValue) {
@@ -322,7 +320,8 @@ function guessCharacter() {
         let newBoxLine = document.createElement("div");
         newBoxLine.className = "character-info";
         let boxDiv = document.createElement("div");
-        boxDiv.className = "info-box false";
+        if (character.name != selectedCharacter.name) { boxDiv.className = "info-box false"; }
+        else { boxDiv.className = "info-box true"; }
         let iconBox = document.createElement("img");
         iconBox.src = character.icon;
         boxDiv.appendChild(iconBox);

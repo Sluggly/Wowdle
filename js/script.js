@@ -126,7 +126,7 @@ function loadAllCharacters() {
     createCharacter("Elune","God","None","Female","Old","Unknown","Unknown","Never","None","Can't Attack","None","src/Ragnaros.png");
     createCharacter("Aman'Thul","Titan","None","Male","Old","0","Unknown","Legion","None","Can't Attack","Instance","src/Ragnaros.png");
     createCharacter("Silas Darkmoon","Gnome","None","Male","Young","0","Azeroth","Vanilla","None","Can't Attack","Open World","src/Ragnaros.png");
-    createCharacter("Sabellian","Dragonkin","None","Male","Old","0","Azeroth","Vanilla","Mage","Can't Attack","Open World","src/Ragnaros.png");
+    createCharacter("Sabellian","Dragonkin","None","Male","Old","0",["Azeroth","Outland"],"BC","Mage","Can't Attack","Open World","src/Ragnaros.png");
 
     // Evil Boss
     createCharacter("Arthas Menethil","Human","Scourge","Male","Young","1",["Azeroth","Shadowlands"],"WOTLK",["Death Knight","Paladin"],"Fightable",["Open World","Instance"],"src/Ragnaros.png");
@@ -180,6 +180,8 @@ function loadAllCharacters() {
     createCharacter("Galakrond","Dragonkin","None","Male","Old","1","Azeroth","Never","None","Can't Attack","None","src/Ragnaros.png");
     createCharacter("Sargeras","Titan","Burning Legion","Male","Old","0","Unknown","Legion","None","Can't Attack","None","src/Ragnaros.png");
     createCharacter("Teron Gorefiend","Undead","None","Male","Young","2","Outland","BC","Death Knight","Killable","Instance","src/Ragnaros.png");
+    createCharacter("Saphiron",["Undead","Dragonkin"],"Scourge","Male","Young","3",["Azeroth","Shadowlands"],"WOTLK","None","Killable","Instance","src/Ragnaros.png");
+    createCharacter("Syndragosa",["Undead","Dragonkin"],"Scourge","Female","Young","2","Azeroth","WOTLK","None","Killable","Instance","src/Ragnaros.png");
 
 }
 

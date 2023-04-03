@@ -42,28 +42,28 @@ function createCharacter(name,race,affiliation,gender,age,deathCount,zone,iga,pl
 
 function loadAllCharacters() {
     // Horde
-    createCharacter("Thrall","Orc","Horde","Male","Young","0","Azeroth","Vanilla",["Shaman","Warrior"],"Can't Attack","Open World","src/Ragnaros.png");
-    createCharacter("Sylvanas Windrunner","Undead","Horde","Female","Young","3","Shadowlands","Vanilla","Hunter","Fightable",["Open World","Instance"],"src/Ragnaros.png");
-    createCharacter("Cairne Bloodhoof","Tauren","Horde","Male","Young","1","Azeroth","Vanilla","Warrior","Can't Attack","None","src/Ragnaros.png");
-    createCharacter("Baine Bloodhoof","Tauren","Horde","Male","Young","0","Azeroth","Vanilla","Warrior","Can't Attack","Open World","src/Ragnaros.png");
-    createCharacter("Rexxar",["Orc","Ogre"],"Horde","Male","Young","0","Azeroth","BC","Hunter","Can't Attack",["Open World","Instance"],"src/Ragnaros.png");
-    createCharacter("Vol'Jin","Troll","Horde","Male","Young","1","Azeroth","Vanilla","Shaman","Can't Attack","None","src/Ragnaros.png");
-    createCharacter("Zul'Jin","Troll","Horde","Male","Young","1","Azeroth","Vanilla","Warrior","Can't Attack","None","src/Ragnaros.png");
-    createCharacter("Lor'themar Theron","Elf","Horde","Male","Young","0","Azeroth","BC","Hunter","Killable","Open World","src/Ragnaros.png");
-    createCharacter("Jastor Gallywix","Goblin","Horde","Male","Young","0","Azeroth","Cataclysm","None","Can't Attack","Open World","src/Ragnaros.png");
-    createCharacter("Varok Saurfang","Orc","Horde","Male","Young","1","Azeroth","Vanilla","Warrior","Can't Attack","None","src/Ragnaros.png");
-    createCharacter("Drek'Thar","Orc","Horde","Male","Young","0","Azeroth","Vanilla","Shaman","Killable",["Open World","Instance"],"src/Ragnaros.png");
-    createCharacter("Garrosh Hellscream","Orc","Horde","Male","Young","1","Azeroth","BC","Warrior","Fightable","Instance","src/Ragnaros.png");
-    createCharacter("Grommash Hellscream","Orc","Horde","Male","Young","1",["Azeroth","Draenor"],"WOD","Warrior","Can't Attack",["Open World","Instance"],"src/Ragnaros.png");
-    createCharacter("Magatha Grimtotem","Tauren","Horde","Female","Young","0","Azeroth","Vanilla","Shaman","Can't Attack","Open World","src/Ragnaros.png");
-    createCharacter("Gazlowe","Goblin","Horde","Male","Young","0","Azeroth","Vanilla","None","Can't Attack","Open World","src/Ragnaros.png");
-    createCharacter("Rokhan","Troll","Horde","Male","Young","0","Azeroth","Vanilla",["Hunter","Shaman"],"Killable",["Open World","Instance"],"src/Ragnaros.png");
-    createCharacter("Ji Firepaw","Pandaren","Horde","Male","Young","0","Azeroth","MOP","Monk","Can't Attack","Open World","src/Ragnaros.png");
-    createCharacter("Thalyssra","Elf","Horde","Female","Young","0","Azeroth","Legion","Mage","Can't Attack","Open World","src/Ragnaros.png");
-    createCharacter("Queen Talanji","Troll","Horde","Female","Young","0","Azeroth","BFA","Priest","Can't Attack","Open World","src/Ragnaros.png");
-    createCharacter("King Rastakhan","Troll","Horde","Male","Young","1","Azeroth","BFA","None","Killable","Instance","src/Ragnaros.png");
-    createCharacter("Garona Halforcen",["Orc","Draenei"],"Horde","Female","Young","0","Azeroth","WOTLK","Rogue","Can't Attack","Open World","src/Ragnaros.png");
-    createCharacter("Nathanos Blightcaller","Undead","Horde","Male","Young","1","Azeroth","BFA","Hunter","Fightable","Open World","src/Ragnaros.png");
+    createCharacter("Thrall","Orc","Horde","Male","Young","0","Azeroth","Vanilla",["Shaman","Warrior"],"Can't Attack","Open World","src/Thrall.webp");
+    createCharacter("Sylvanas Windrunner","Undead","Horde","Female","Young","3","Shadowlands","Vanilla","Hunter","Fightable",["Open World","Instance"],"src/Sylvanas.png");
+    createCharacter("Cairne Bloodhoof","Tauren","Horde","Male","Young","1","Azeroth","Vanilla","Warrior","Can't Attack","None","src/Cairne.png");
+    createCharacter("Baine Bloodhoof","Tauren","Horde","Male","Young","0","Azeroth","Vanilla","Warrior","Can't Attack","Open World","src/Baine.png");
+    createCharacter("Rexxar",["Orc","Ogre"],"Horde","Male","Young","0","Azeroth","BC","Hunter","Can't Attack",["Open World","Instance"],"src/Rexxar.png");
+    createCharacter("Vol'Jin","Troll","Horde","Male","Young","1","Azeroth","Vanilla","Shaman","Can't Attack","None","src/Vol'Jin.png");
+    createCharacter("Zul'Jin","Troll","Horde","Male","Young","1","Azeroth","Vanilla","Warrior","Can't Attack","None","src/Zul'Jin.png");
+    createCharacter("Lor'themar Theron","Elf","Horde","Male","Young","0","Azeroth","BC","Hunter","Killable","Open World","src/Lor'themar.png");
+    createCharacter("Jastor Gallywix","Goblin","Horde","Male","Young","0","Azeroth","Cataclysm","None","Can't Attack","Open World","src/Gallywix.png");
+    createCharacter("Varok Saurfang","Orc","Horde","Male","Young","1","Azeroth","Vanilla","Warrior","Can't Attack","None","src/Varok.png");
+    createCharacter("Drek'Thar","Orc","Horde","Male","Young","0","Azeroth","Vanilla","Shaman","Killable",["Open World","Instance"],"src/Drek'Thar.png");
+    createCharacter("Garrosh Hellscream","Orc","Horde","Male","Young","1","Azeroth","BC","Warrior","Fightable","Instance","src/Garrosh.png");
+    createCharacter("Grommash Hellscream","Orc","Horde","Male","Young","1",["Azeroth","Draenor"],"WOD","Warrior","Can't Attack",["Open World","Instance"],"src/Grommash.png");
+    createCharacter("Magatha Grimtotem","Tauren","Horde","Female","Young","0","Azeroth","Vanilla","Shaman","Can't Attack","Open World","src/Magatha.jpg");
+    createCharacter("Gazlowe","Goblin","Horde","Male","Young","0","Azeroth","Vanilla","None","Can't Attack","Open World","src/Gazlowe.png");
+    createCharacter("Rokhan","Troll","Horde","Male","Young","0","Azeroth","Vanilla",["Hunter","Shaman"],"Killable",["Open World","Instance"],"src/Rokhan.jpg");
+    createCharacter("Ji Firepaw","Pandaren","Horde","Male","Young","0","Azeroth","MOP","Monk","Can't Attack","Open World","src/Ji.png");
+    createCharacter("Thalyssra","Elf","Horde","Female","Young","0","Azeroth","Legion","Mage","Can't Attack","Open World","src/Thalyssra.jpg");
+    createCharacter("Queen Talanji","Troll","Horde","Female","Young","0","Azeroth","BFA","Priest","Can't Attack","Open World","src/Talanji.png");
+    createCharacter("King Rastakhan","Troll","Horde","Male","Young","1","Azeroth","BFA","None","Killable","Instance","src/Rastakhan.png");
+    createCharacter("Garona Halforcen",["Orc","Draenei"],"Horde","Female","Young","0","Azeroth","WOTLK","Rogue","Can't Attack","Open World","src/Garona.png");
+    createCharacter("Nathanos Blightcaller","Undead","Horde","Male","Young","1","Azeroth","BFA","Hunter","Fightable","Open World","src/Nathanos.png");
 
     // Alliance
     createCharacter("Jaina Proudmoore","Human","Alliance","Female","Young","0",["Azeroth","Shadowlands"],"Vanilla","Mage","Fightable",["Open World","Instance"],"src/Ragnaros.png");
@@ -127,6 +127,8 @@ function loadAllCharacters() {
     createCharacter("Aman'Thul","Titan","None","Male","Old","0","Unknown","Legion","None","Can't Attack","Instance","src/Ragnaros.png");
     createCharacter("Silas Darkmoon","Gnome","None","Male","Young","0","Azeroth","Vanilla","None","Can't Attack","Open World","src/Ragnaros.png");
     createCharacter("Sabellian","Dragonkin","None","Male","Old","0",["Azeroth","Outland"],"BC","Mage","Can't Attack","Open World","src/Ragnaros.png");
+    createCharacter("Prince Renathal","Venthyr","Venthyr","Male","Old","0",["Shadowlands"],"Shadowlands","None","Can't Attack","Open World","src/Ragnaros.png");
+    createCharacter("Valeera Sanguinar","Elf","Neutral","Female","Young","0",["Azeroth"],"Vanilla","Rogue","Can't Attack","Open World","src/Ragnaros.png");
 
     // Evil Boss
     createCharacter("Arthas Menethil","Human","Scourge","Male","Young","1",["Azeroth","Shadowlands"],"WOTLK",["Death Knight","Paladin"],"Fightable",["Open World","Instance"],"src/Ragnaros.png");
@@ -348,4 +350,7 @@ function guessCharacter() {
         delete characterDict[character.name.toLowerCase().trim()];
     }
     document.getElementById("searchGuess").value = "";
+    let selectionMenu = document.getElementById("selection-menu");
+    selectionMenu.innerHTML = "";
+    selectionMenu.className = "selection-menu";
 }

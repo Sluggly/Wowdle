@@ -214,3 +214,21 @@ body::before {
 .selection-menu.show {
     display: block;
 }
+
+.selection-menu ul li img {
+    border: 3px solid transparent;
+    border-image-source: url('../src/cadre.png');
+    border-image-slice: 2;
+    border-image-repeat: stretch;
+}
+
+.info-box img {
+    border: 6px solid transparent;
+    border-image-source: url('../src/cadre.png');
+    border-image-slice: 10;
+    border-image-repeat: stretch;
+    object-fit: cover;
+    width: 65px;
+    height: 65px;
+    position: absolute;
+}

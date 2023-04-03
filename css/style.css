@@ -137,7 +137,9 @@ body::before {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     overflow: hidden;
 }
 
@@ -173,7 +175,7 @@ body::before {
 
 .info-box.partial {
     border-color: rgb(230, 182, 182);
-    background-color: orange;
+    background-color: rgb(136, 233, 168);
 }
 
 .selection-menu {

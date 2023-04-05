@@ -151,13 +151,13 @@ function loadAllCharacters() {
     createCharacter("C'Thun","Old God","None","Other","Old","1","Azeroth","Vanilla","None","Fightable","Instance","src/Cthun.png");
     createCharacter("Gruul","Gronn","None","Male","Young","1","Outland","BC","None","Killable","Instance","src/Gruul.png");
     createCharacter("Magtheridon","Demon","Burning Legion","Male","Young","1","Outland","BC","None","Killable","Instance","src/Magtheridon.png");
-    createCharacter("Archimonde","Demon","Burning Legion","Male","Old","2",["Argus","Azeroth","Twisting Nether"],"BC","Warlock","Killable","Instance","src/Archimonde.png");
-    createCharacter("Kil'Jaeden","Demon","Burning Legion","Male","Old","2",["Argus","Azeroth","Twisting Nether"],"BC","Warlock","Killable","Instance","src/Kiljaeden.jpg");
+    createCharacter("Archimonde","Demon","Burning Legion","Male","Old","2",["Argus","Azeroth","Twisting-Nether"],"BC","Warlock","Killable","Instance","src/Archimonde.png");
+    createCharacter("Kil'Jaeden","Demon","Burning Legion","Male","Old","2",["Argus","Azeroth","Twisting-Nether"],"BC","Warlock","Killable","Instance","src/Kiljaeden.jpg");
     createCharacter("Anub'arak","Undead","Scourge","Male","Young","1","Azeroth","WOTLK","None","Killable","Instance","src/Anubarak.webp");
     createCharacter("Jailer/Zovaal","Eternal One","None","Male","Old","1","Shadowlands","Shadowlands","None","Killable",["Open World","Instance"],"src/Jailer.png");
-    createCharacter("Mal'Ganis","Demon","Burning Legion","Male","Young","3",["Azeroth","Twisting Nether","Shadowlands"],"WOTLK","None","Killable","Instance","src/Malganis.webp");
+    createCharacter("Mal'Ganis","Demon","Burning Legion","Male","Young","3",["Azeroth","Twisting-Nether","Shadowlands"],"WOTLK","None","Killable","Instance","src/Malganis.webp");
     createCharacter("Ner'Zhul","Orc","Scourge","Male","Young","1",["Azeroth","Outland"],"WOD",["Shaman","Warlock"],"Fightable","Instance","src/Nerzhul.png");
-    createCharacter("Varimathras","Demon","Burning Legion","Male","Young","2",["Azeroth","Twisting Nether"],"Vanilla","Warlock","Killable","Instance","src/Varimathras.jpg");
+    createCharacter("Varimathras","Demon","Burning Legion","Male","Young","2",["Azeroth","Twisting-Nether"],"Vanilla","Warlock","Killable","Instance","src/Varimathras.jpg");
     createCharacter("Kel'Thuzad","Undead","Scourge","Male","Young","2",["Azeroth","Shadowlands"],"WOTLK","Mage","Killable",["Open World","Instance"],"src/Kelthuzad.webp");
     createCharacter("Malygos","Dragonkin","None","Male","Old","1","Azeroth","WOTLK","None","Killable","Instance","src/Malygos.png");
     createCharacter("Yogg-Saron","Old God","None","Other","Old","1","Azeroth","WOTLK","None","Killable","Instance","src/Yogg.png");
@@ -239,7 +239,6 @@ function updateSearch(searchValue) {
     searchValue = searchValue.toLowerCase().trim();
     let selectionMenu = document.getElementById("selection-menu");
     selectionMenu.innerHTML = "";
-    selectionMenu.scrollTop = 0;
     if (searchValue.length > 0) {
         const searchList = characterList.filter((character) => {
             const name = character.name.toLowerCase();
@@ -271,11 +270,25 @@ function updateSearch(searchValue) {
     else {
         selectionMenu.className = "selection-menu";
     }
+    selectionMenu.scrollTop = 0;
 }
 
 function createBox(guessValue,selectedValue) {
     let boxDiv = document.createElement("div");
-    let tmpP = document.createElement("p");
+    let sizeText;
+    if (Array.isArray(guessValue)) {
+        let lengthArray = guessValue.length;
+        if (lengthArray == 1) { sizeText = "18px"; }
+        else if (lengthArray == 2) { sizeText = "16px"; }
+        else if (lengthArray == 3) { sizeText = "14px"; }
+        else if (lengthArray == 4) { sizeText = "12px"; }
+        else if (lengthArray == 5) { sizeText = "10px"; }
+        else if (lengthArray == 6) { sizeText = "8px"; }
+        else if (lengthArray == 7) { sizeText = "6px"; }
+    }
+    else {
+        sizeText = "18px";
+    }
     if ((Array.isArray(guessValue))&&(Array.isArray(selectedValue))) { // Les deux sont des arrays
         let isPartial = false;
         let isSame = true;
@@ -287,32 +300,39 @@ function createBox(guessValue,selectedValue) {
         if (isSame) { boxDiv.className = "info-box true"; }
         else if (isPartial) { boxDiv.className = "info-box partial"; }
         else { boxDiv.className = "info-box false"; }
-        let tmpText = "";
         for (const elem of guessValue) {
-            tmpText = tmpText + elem + " ";
+            let tmpP = document.createElement("p");
+            tmpP.innerHTML =  elem;
+            tmpP.style.fontSize = sizeText;
+            boxDiv.appendChild(tmpP);
         }
-        tmpP.innerHTML = tmpText;
     }
     else if ((Array.isArray(guessValue))&&(!Array.isArray(selectedValue))) { // Guess is Array
         if (guessValue.includes(selectedValue)) { boxDiv.className = "info-box partial"; }
         else { boxDiv.className = "info-box false"; }
-        let tmpText = "";
         for (const elem of guessValue) {
-            tmpText = tmpText + elem + " ";
+            let tmpP = document.createElement("p");
+            tmpP.innerHTML =  elem;
+            tmpP.style.fontSize = sizeText;
+            boxDiv.appendChild(tmpP);
         }
-        tmpP.innerHTML = tmpText;
     }
     else if ((!Array.isArray(guessValue))&&(Array.isArray(selectedValue))) { // Selected is array
         if (selectedValue.includes(guessValue)) { boxDiv.className = "info-box partial"; }
         else { boxDiv.className = "info-box false"; }
+        let tmpP = document.createElement("p");
         tmpP.innerHTML = guessValue;
+        tmpP.style.fontSize = sizeText;
+        boxDiv.appendChild(tmpP);
     }
     else if ((!Array.isArray(guessValue))&&(!Array.isArray(selectedValue))) { // Les deux ne sont pas array
         if (guessValue == selectedValue) { boxDiv.className = "info-box true"; }
         else { boxDiv.className = "info-box false"; }
+        let tmpP = document.createElement("p");
         tmpP.innerHTML = guessValue;
+        tmpP.style.fontSize = sizeText;
+        boxDiv.appendChild(tmpP);
     }
-    boxDiv.appendChild(tmpP);
     return boxDiv;
 }
 

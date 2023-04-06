@@ -139,9 +139,9 @@ function loadAllCharacters() {
     createCharacter("Nefarian","Dragonkin","None","Male","Higher","1","Azeroth","Cataclysm","None","Killable","Instance","src/Nefarian.jpg");
     createCharacter("Onyxia","Dragonkin","None","Female","Higher","2","Azeroth","Vanilla","None","Killable","Instance","src/Onyxia.png");
     createCharacter("Kael'Thas Sunstrider","Elf","None","Male","Lower","1",["Azeroth","Outland","Shadowlands"],"BC","Mage","Killable",["Open World","Instance"],"src/Kael.jpg");
-    createCharacter("Edwin Vancleef","Human","None","Male","Lower","1","Azeroth","Vanilla","Rogue","Can't Attack","None","src/Edwin.webp");
+    createCharacter("Edwin Vancleef","Human","Defias","Male","Lower","1","Azeroth","Vanilla","Rogue","Can't Attack","None","src/Edwin.webp");
     createCharacter("Emperor Dagran Thaurissan","Dwarf","None","Male","Lower","1","Azeroth","Vanilla","None","Killable","Instance","src/Dagran.jpg");
-    createCharacter("Captain Cookie","Murloc","None","Male","Lower","1","Azeroth","Vanilla","None","Killable","Instance","src/Cookie.png");
+    createCharacter("Captain Cookie","Murloc","Defias","Male","Lower","1","Azeroth","Vanilla","None","Killable","Instance","src/Cookie.png");
     createCharacter("Princess Theradras","Elemental","None","Female","Higher","1","Azeroth","Vanilla","None","Killable","Instance","src/Theradras.jpg");
     createCharacter("High Inquisitor Whitemane","Human","None","Female","Lower","1","Azeroth","Vanilla",["Priest","Death Knight"],"Killable",["Open World","Instance"],"src/Whitemane.png");
     createCharacter("Baron Titus Rivendare","Human","Scourge","Male","Lower","1","Azeroth","Vanilla","Death Knight","Killable","Instance","src/Baron.png");
@@ -222,8 +222,10 @@ var randValue = rand();
 var numero = Math.trunc(randValue*1000)%characterList.length;
 
 var selectedCharacter = characterList[numero];
+var numberOfGuess = 0;
 
 function resetSeed() {
+    numberOfGuess = 0;
     characterDict = [];
     characterList = [];
     loadAllCharacters();
@@ -239,6 +241,7 @@ function resetSeed() {
     let searchDiv = document.getElementById("searchDiv");
     searchDiv.style.opacity = 100;
     searchDiv.style.pointerEvents = "auto";
+    displayColorCoding();
 }
 
 function compare(a,b) {
@@ -396,6 +399,8 @@ function guessCharacter() {
     if (character == selectedCharacter) {
         winScreen();
     }
+    numberOfGuess++;
+    displayColorCoding();
 }
 
 const tooltipSpan = document.getElementById("tooltip");
@@ -443,4 +448,9 @@ function winScreen() {
 function closeVictoryScreen() {
     let winDiv = document.getElementById("victoryDiv");
     winDiv.style.display = "none";
+}
+
+function displayColorCoding() {
+    if (numberOfGuess > 3) { document.querySelector('.bottom').style.display = 'none'; }
+    else { document.querySelector('.bottom').style.display = 'flex'; }
 }

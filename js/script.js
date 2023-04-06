@@ -53,8 +53,8 @@ function loadAllCharacters() {
     createCharacter("Jastor Gallywix","Goblin","Horde","Male","Lower","0","Azeroth","Cataclysm","None","Can't Attack","Open World","src/Gallywix.png");
     createCharacter("Varok Saurfang","Orc","Horde","Male","Lower","1","Azeroth","Vanilla","Warrior","Can't Attack","None","src/Varok.png");
     createCharacter("Drek'Thar","Orc","Horde","Male","Lower","0","Azeroth","Vanilla","Shaman","Killable",["Open World","Instance"],"src/Drek'Thar.png");
-    createCharacter("Garrosh Hellscream","Orc","Horde","Male","Lower","1","Azeroth","BC","Warrior","Fightable","Instance","src/Garrosh.png");
-    createCharacter("Grommash Hellscream","Orc","Horde","Male","Lower","1",["Azeroth","Draenor"],"WOD","Warrior","Can't Attack",["Open World","Instance"],"src/Grommash.png");
+    createCharacter("Garrosh Hellscream","Orc","Horde","Male","Lower","1",["Azeroth","Draenor"],"BC","Warrior","Fightable",["Open World","Instance"],"src/Garrosh.png");
+    createCharacter("Grommash Hellscream","Orc","Horde","Male","Lower","1",["Azeroth","Outland","Draenor","Shadowlands"],"WOD","Warrior","Can't Attack",["Open World","Instance"],"src/Grommash.png");
     createCharacter("Magatha Grimtotem","Tauren","Horde","Female","Lower","0","Azeroth","Vanilla","Shaman","Can't Attack","Open World","src/Magatha.jpg");
     createCharacter("Gazlowe","Goblin","Horde","Male","Lower","0","Azeroth","Vanilla","None","Can't Attack","Open World","src/Gazlowe.png");
     createCharacter("Rokhan","Troll","Horde","Male","Lower","0","Azeroth","Vanilla",["Hunter","Shaman"],"Killable",["Open World","Instance"],"src/Rokhan.jpg");
@@ -157,7 +157,7 @@ function loadAllCharacters() {
     createCharacter("Anub'arak","Undead","Scourge","Male","Lower","1","Azeroth","WOTLK","None","Killable","Instance","src/Anubarak.webp");
     createCharacter("Jailer/Zovaal","Eternal One","None","Male","Higher","1","Shadowlands","Shadowlands","None","Killable",["Open World","Instance"],"src/Jailer.png");
     createCharacter("Mal'Ganis","Demon","Burning Legion","Male","Lower","3",["Azeroth","Twisting-Nether","Shadowlands"],"WOTLK","None","Killable","Instance","src/Malganis.webp");
-    createCharacter("Ner'Zhul","Orc","Scourge","Male","Lower","1",["Azeroth","Outland"],"WOD",["Shaman","Warlock"],"Fightable","Instance","src/Nerzhul.png");
+    createCharacter("Ner'Zhul","Orc","Scourge","Male","Lower","1",["Azeroth","Outland","Draenor"],"WOD",["Shaman","Warlock"],"Fightable","Instance","src/Nerzhul.png");
     createCharacter("Varimathras","Demon","Burning Legion","Male","Lower","2",["Azeroth","Twisting-Nether"],"Vanilla","Warlock","Killable","Instance","src/Varimathras.jpg");
     createCharacter("Kel'Thuzad","Undead","Scourge","Male","Lower","2",["Azeroth","Shadowlands"],"WOTLK","Mage","Killable",["Open World","Instance"],"src/Kelthuzad.webp");
     createCharacter("Malygos","Dragonkin","None","Male","Higher","1","Azeroth","WOTLK","None","Killable","Instance","src/Malygos.png");
@@ -317,9 +317,11 @@ function createBox(guessValue,selectedValue) {
         else if (isPartial) { boxDiv.className = "info-box partial"; }
         else { boxDiv.className = "info-box false"; }
         for (const elem of guessValue) {
+            let customSize = sizeText;
+            if ((guessValue.length < 3)&&(elem.length > 8)) { customSize = "14px"; }
             let tmpP = document.createElement("p");
             tmpP.innerHTML =  elem;
-            tmpP.style.fontSize = sizeText;
+            tmpP.style.fontSize = customSize;
             boxDiv.appendChild(tmpP);
         }
     }
@@ -327,26 +329,32 @@ function createBox(guessValue,selectedValue) {
         if (guessValue.includes(selectedValue)) { boxDiv.className = "info-box partial"; }
         else { boxDiv.className = "info-box false"; }
         for (const elem of guessValue) {
+            let customSize = sizeText;
+            if ((guessValue.length < 3)&&(elem.length > 8)) { customSize = "14px"; }
             let tmpP = document.createElement("p");
             tmpP.innerHTML =  elem;
-            tmpP.style.fontSize = sizeText;
+            tmpP.style.fontSize = customSize;
             boxDiv.appendChild(tmpP);
         }
     }
     else if ((!Array.isArray(guessValue))&&(Array.isArray(selectedValue))) { // Selected is array
         if (selectedValue.includes(guessValue)) { boxDiv.className = "info-box partial"; }
         else { boxDiv.className = "info-box false"; }
+        let customSize = sizeText;
+        if (guessValue.length > 8) { customSize = "14px"; }
         let tmpP = document.createElement("p");
         tmpP.innerHTML = guessValue;
-        tmpP.style.fontSize = sizeText;
+        tmpP.style.fontSize = customSize;
         boxDiv.appendChild(tmpP);
     }
     else if ((!Array.isArray(guessValue))&&(!Array.isArray(selectedValue))) { // Les deux ne sont pas array
         if (guessValue == selectedValue) { boxDiv.className = "info-box true"; }
         else { boxDiv.className = "info-box false"; }
+        let customSize = sizeText;
+        if (guessValue.length > 8) { customSize = "14px"; }
         let tmpP = document.createElement("p");
         tmpP.innerHTML = guessValue;
-        tmpP.style.fontSize = sizeText;
+        tmpP.style.fontSize = customSize;
         boxDiv.appendChild(tmpP);
     }
     return boxDiv;
@@ -405,8 +413,8 @@ function guessCharacter() {
 
 const tooltipSpan = document.getElementById("tooltip");
 document.addEventListener('mousemove',function(e) {
-    tooltipSpan.style.top = (e.clientY + 20) + 'px';
-	tooltipSpan.style.left = (e.clientX + 20) + 'px';
+    tooltipSpan.style.top = (e.pageY + 20) + 'px';
+	tooltipSpan.style.left = (e.pageX + 20) + 'px';
 });
 
 var headerTooltip = [];

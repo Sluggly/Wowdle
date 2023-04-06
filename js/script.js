@@ -258,7 +258,6 @@ Array.prototype.unique = function() {
                 a.splice(j--, 1);
         }
     }
-
     return a;
 };
 
@@ -375,6 +374,7 @@ function createBox(guessValue,selectedValue) {
         tmpP.style.fontSize = customSize;
         boxDiv.appendChild(tmpP);
     }
+    boxDiv.classList.add("hide-info-box");
     return boxDiv;
 }
 
@@ -417,16 +417,31 @@ function guessCharacter() {
             }
         }
         delete characterDict[character.name.toLowerCase().trim()];
+        if (character == selectedCharacter) {
+            winScreen();
+        }
+        numberOfGuess++;
+        displayColorCoding();
+        playRevealAnimation(newBoxLine);
     }
     document.getElementById("searchGuess").value = "";
     let selectionMenu = document.getElementById("selection-menu");
     selectionMenu.innerHTML = "";
     selectionMenu.className = "selection-menu";
-    if (character == selectedCharacter) {
-        winScreen();
-    }
-    numberOfGuess++;
-    displayColorCoding();
+}
+
+function playRevealAnimation(infoDiv) {
+    let boxes = infoDiv.children;
+    let boxIndex = 0;
+    const animationInterval = setInterval(() => {
+        if (boxIndex >= boxes.length) {
+          clearInterval(animationInterval);
+          return;
+        }
+        boxes[boxIndex].classList.remove('hide-info-box');
+        boxes[boxIndex].classList.add('show-info-box');
+        boxIndex++;
+    }, 250);
 }
 
 const tooltipSpan = document.getElementById("tooltip");

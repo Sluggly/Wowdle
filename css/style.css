@@ -324,3 +324,15 @@ body::before {
     background-color: #000;
     color: #fff;
 }
+
+.hide-info-box {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+  
+/* Add this class to the info box to reveal it with animation */
+.show-info-box {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}

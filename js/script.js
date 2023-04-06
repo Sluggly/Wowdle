@@ -250,16 +250,34 @@ function compare(a,b) {
     return 0;
 }
 
+Array.prototype.unique = function() {
+    var a = this.concat();
+    for(var i=0; i<a.length; ++i) {
+        for(var j=i+1; j<a.length; ++j) {
+            if(a[i] === a[j])
+                a.splice(j--, 1);
+        }
+    }
+
+    return a;
+};
+
 function updateSearch(searchValue) {
     searchValue = searchValue.toLowerCase().trim();
     let selectionMenu = document.getElementById("selection-menu");
     selectionMenu.innerHTML = "";
     if (searchValue.length > 0) {
+        let startList = characterList.filter((character) => {
+            const name = character.name.toLowerCase();
+            return name.startsWith(searchValue);
+        });
         let searchList = characterList.filter((character) => {
             const name = character.name.toLowerCase();
             return name.includes(searchValue);
         });
         searchList.sort(compare);
+        startList.sort(compare);
+        searchList = startList.concat(searchList).unique();
         if (searchList.length > 0) {
             let tmpUl = document.createElement("ul");
             for (let character of searchList) {

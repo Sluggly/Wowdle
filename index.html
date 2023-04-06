@@ -6,26 +6,32 @@
         <title>Wowdle</title>
 	</head>
 	<body>
+	<div class="victory-screen" id="victoryDiv">
+		<h1>Congratulations!</h1>
+		<p>You have found todays character!</p>
+		<button onclick="closeVictoryScreen()">Close</button>
+	</div>
+	<span id="tooltip"></span>
 	<div class="container">
 		<div id="mainPage">
-			<div class="search-bar">
+			<div class="search-bar" id="searchDiv">
 				<input type="text" id="searchGuess" oninput="updateSearch(this.value)" placeholder="Search a World of Warcraft Character."/>
 				<button id="guess-button" onclick="guessCharacter()">Guess</button>
 				<div id="selection-menu" class="selection-menu">
 				</div>
 			</div>
 			<div class="character-info-headers">
-				<h2>Character</h2>
-				<h2>Race</h2>
-				<h2>Faction</h2>
-				<h2>Gender</h2>
-				<h2>Age</h2>
-				<h2>Death Count</h2>
-				<h2>Zone</h2>
-				<h2>First Apparition</h2>
-				<h2>Class</h2>
-				<h2>Killable</h2>
-				<h2>Content</h2>
+				<h2 onmouseover="showTooltip('Character')" onmouseout="hideTooltip()">Character</h2>
+				<h2 onmouseover="showTooltip('Race')" onmouseout="hideTooltip()">Race</h2>
+				<h2 onmouseover="showTooltip('Faction')" onmouseout="hideTooltip()">Faction</h2>
+				<h2 onmouseover="showTooltip('Gender')" onmouseout="hideTooltip()">Gender</h2>
+				<h2 onmouseover="showTooltip('Age')" onmouseout="hideTooltip()">Age</h2>
+				<h2 onmouseover="showTooltip('Death')" onmouseout="hideTooltip()">Death Count</h2>
+				<h2 onmouseover="showTooltip('Zone')" onmouseout="hideTooltip()">Zone</h2>
+				<h2 onmouseover="showTooltip('First')" onmouseout="hideTooltip()">First Apparition</h2>
+				<h2 onmouseover="showTooltip('Class')" onmouseout="hideTooltip()">Class</h2>
+				<h2 onmouseover="showTooltip('Killable')" onmouseout="hideTooltip()">Killable</h2>
+				<h2 onmouseover="showTooltip('Content')" onmouseout="hideTooltip()">Content</h2>
 			</div>
 			<div id="guessZone">
 			</div>

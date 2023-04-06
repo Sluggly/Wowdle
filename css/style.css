@@ -97,26 +97,32 @@ body::before {
     border-radius: 0;
 }
 
+.container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
 /* Styles for the character information boxes */
 .character-info {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 20px auto;
-    max-width: 1200px;
+    max-width: 1600px;
 }
 
 .character-info-headers {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 1200px;
+    max-width: 1600px;
     max-height: 50px;
 }
 
 .character-info-headers h2{
-    width: 80px;
-    height: 80px;
+    width: 84px;
+    height: 84px;
     color: white;
     font-size: 16px;
     margin: 10px;
@@ -127,8 +133,8 @@ body::before {
 }
 
 .info-box {
-    width: 80px;
-    height: 80px;
+    width: 84px;
+    height: 84px;
     margin: 10px;
     border: 2px solid #000;
     border-radius: 10px;
@@ -233,3 +239,49 @@ body::before {
     height: 65px;
     position: absolute;
 }
+
+#tooltip {
+    color: white;
+    display: none;
+    position: absolute;
+    border: solid 1px;
+    background-color: #5e5454;
+    max-width: 200px;
+    padding: 5px;
+    z-index: 5;
+}
+
+.victory-screen {
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    background-color: #4e4c4c;
+    border: 2px solid #000000;
+    text-align: center;
+    z-index: 10;
+}
+
+.victory-screen h1 {
+    color: white;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.victory-screen p {
+    color: white;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.victory-screen button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+  

@@ -248,7 +248,7 @@ body::before {
     background-color: #5e5454;
     max-width: 200px;
     padding: 5px;
-    z-index: 5;
+    z-index: 25;
 }
 
 .victory-screen {
@@ -321,7 +321,7 @@ body::before {
 }
 
 .reset-button:hover {
-    background-color: #000;
+    background-color: #333;
     color: #fff;
 }
 
@@ -335,4 +335,98 @@ body::before {
     opacity: 1;
     transform: translateY(0);
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.option-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    margin-top: 50px;
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #fff;
+    color: #333;
+    border: 2px solid #333;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.option-button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.options-screen {
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    background-color: #4e4c4c;
+    border: 2px solid #000000;
+    z-index: 10;
+    max-height: 600px; /* adjust the maximum height as needed */
+    max-width: 1200px;
+    width: 1200px;
+    height: 600px;
+}
+
+.options-screen-top {
+    display: flex;
+    justify-content: center;
+}
+
+.options-screen h1 {
+    color: white;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.options-screen span {
+    color: white;
+    font-size: 1.6em;
+}
+
+.options-screen button {
+    position: fixed;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    margin-top: 10px;
+    margin-right: 10px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    top: 5px;
+    right: 5px;
+}
+
+.option {
+    display: flex; /* Display options in a row */
+    align-items: center; /* Align text and checkbox in the center */
+    margin-bottom: 10px; /* Add some space between options */
+    color: white;
+    font-size: 1.2em;
+    align-items: center;
+    flex-basis: calc(50% - 5px);
+    margin-bottom: 10px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    margin: 5px; 
+}
+
+.options-screen-selection {
+    overflow-y: auto; /* add scrollbars when the content overflows */
+    flex-direction: column;
+    column-count: 2;
+    column-gap: 20px;
+    text-align: center;
+    align-items: center;
 }

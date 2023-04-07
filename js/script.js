@@ -75,7 +75,7 @@ class Options {
         this.headerTooltip["Race"] = "Race of the character, can be multiple if hybrid.";
         this.headerTooltip["Faction"] = "Main affiliation over the game. If multiple then only the latest.";
         this.headerTooltip["Gender"] = "Male, Female, Other or Unknown.";
-        this.headerTooltip["Age"] = "Is the character age higher or lower then 10000.";
+        this.headerTooltip["Age"] = "Is the character age higher or lower than 10000.";
         this.headerTooltip["Death"] = "How much time has each occurence of the character died lore-wise.";
         this.headerTooltip["Zone"] = "Which Planet/Dimension has the character been to?";
         this.headerTooltip["First"] = "What is the first expansion (if any) in which a player could directly meet the character?";

@@ -174,7 +174,7 @@ function loadAllCharacters() {
     createCharacter("Nozdormu","Dragonkin","None","Male","Higher","0","Azeroth","Cataclysm","None","Can't Attack",["Open World","Instance"],"Yes","Yes","None","src/Nozdormu.webp");
     createCharacter("Akama","Broken","None","Male","Higher","0","Outland","BC","Shaman","Can't Attack",["Open World","Instance"],"Yes","Yes","Scythe","src/Akama.webp");
     createCharacter("Loken","Giant","None","Male","Higher","1","Azeroth","WOTLK","None","Killable",["Open World","Instance"],"Yes","No","None","src/Loken.png");
-    createCharacter("Thorim","Giant","None","Male","Higher","1","Azeroth","WOTLK","Warrior","Killable",["Open World","Instance"],"Yes","No","Hammer","src/Thorim.png");
+    createCharacter("Thorim","Giant","None","Male","Higher","1","Azeroth","WOTLK","Warrior","Fightable",["Open World","Instance"],"Yes","No","Hammer","src/Thorim.png");
     createCharacter("Millhouse Manastorm","Gnome","None","Male","Lower","0","Azeroth","BC","Mage","Fightable",["Open World","Instance"],"No","Yes","Staff","src/Millhouse.png");
     createCharacter("Millificent Manastorm","Gnome","None","Female","Lower","0","Azeroth","BC","None","Fightable",["Open World","Instance"],"No","No","Sword","src/Millificent.png");
     createCharacter("Taran Zhu","Pandaren","Neutral","Male","Lower","0","Azeroth","MOP","Monk","Fightable",["Open World","Instance"],"Yes","No","Stick","src/Taran.png");

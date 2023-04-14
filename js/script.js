@@ -125,8 +125,8 @@ function loadAllCharacters() {
     createCharacter("Jastor Gallywix","Goblin","Horde","Male","Lower","0","Azeroth","Cataclysm","None","Can't Attack","Open World","Yes","Yes","Staff","src/Gallywix.png");
     createCharacter("Varok Saurfang","Orc","Horde","Male","Lower","1","Azeroth","Vanilla","Warrior","Can't Attack","None","Yes","Yes","Axe","src/Varok.png");
     createCharacter("Drek'Thar","Orc","Horde","Male","Lower","0","Azeroth","Vanilla","Shaman","Killable",["Open World","Instance"],"Yes","Yes","Axe","src/Drek'Thar.png");
-    createCharacter("Garrosh Hellscream","Orc","Horde","Male","Lower","1",["Azeroth","Draenor"],"BC","Warrior","Fightable",["Open World","Instance"],"Yes","Yes","Axe","src/Garrosh.png");
-    createCharacter("Grommash Hellscream","Orc","Horde","Male","Lower","1",["Azeroth","Outland","Draenor","Shadowlands"],"WOD","Warrior","Can't Attack",["Open World","Instance"],"Yes","Yes","Axe","src/Grommash.png");
+    createCharacter("Garrosh Hellscream","Orc","Horde","Male","Lower","1",["Azeroth","Outland","Draenor","Shadowlands"],"BC","Warrior","Fightable",["Open World","Instance"],"Yes","Yes","Axe","src/Garrosh.png");
+    createCharacter("Grommash Hellscream","Orc","Horde","Male","Lower","1",["Azeroth","Draenor"],"WOD","Warrior","Can't Attack",["Open World","Instance"],"Yes","Yes","Axe","src/Grommash.png");
     createCharacter("Magatha Grimtotem","Tauren","Horde","Female","Lower","0","Azeroth","Vanilla","Shaman","Can't Attack","Open World","Yes","No","Staff","src/Magatha.jpg");
     createCharacter("Gazlowe","Goblin","Horde","Male","Lower","0","Azeroth","Vanilla","None","Can't Attack","Open World","Yes","Yes","Robot","src/Gazlowe.png");
     createCharacter("Rokhan","Troll","Horde","Male","Lower","0","Azeroth","Vanilla",["Hunter","Shaman"],"Killable",["Open World","Instance"],"Yes","No","Blade","src/Rokhan.jpg");

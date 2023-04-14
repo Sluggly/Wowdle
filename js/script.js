@@ -258,6 +258,7 @@ function loadAllCharacters() {
     createCharacter("Teron Gorefiend","Undead","None","Male","Lower","2","Outland","BC","Death Knight","Killable","Instance","No","Yes","Sword","src/Teron.jpg");
     createCharacter("Saphiron",["Undead","Dragonkin"],"Scourge","Male","Lower","3",["Azeroth","Shadowlands"],"WOTLK","None","Killable","Instance","No","No","None","src/Saphiron.webp");
     createCharacter("Syndragosa",["Undead","Dragonkin"],"Scourge","Female","Lower","2","Azeroth","WOTLK","None","Killable","Instance","No","No","None","src/Syndragosa.webp");
+    createCharacter("Patchwerk","Undead","Scourge","Male","Lower","1","Azeroth","WOTLK","None","Killable","Instance","No","Yes",["Axe","Hook"],"src/Patchwerk.jpg");
 
 }
 

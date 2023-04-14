@@ -200,7 +200,7 @@ function loadAllCharacters() {
     createCharacter("Silas Darkmoon","Gnome","Neutral","Male","Lower","0","Azeroth","Vanilla","None","Can't Attack","Open World","Yes","Yes","Staff","src/Silas.png");
     createCharacter("Sabellian","Dragonkin","None","Male","Higher","0",["Azeroth","Outland"],"BC","Mage","Can't Attack","Open World","Yes","No","None","src/Sabellian.png");
     createCharacter("Prince Renathal","Venthyr","Venthyr","Male","Higher","0","Shadowlands","Shadowlands","None","Can't Attack","Open World","Yes","Yes","None","src/Renathal.png");
-    createCharacter("Valeera Sanguinar","Elf","Neutral","Female","Lower","0","Azeroth","Vanilla","Rogue","Can't Attack","Open World","Yes","Yes","Dagger","src/Valeera.jpeg");
+    createCharacter("Valeera Sanguinar","Elf","Neutral","Female","Lower","0",["Azeroth","Draenor"],"WOTLK","Rogue","Can't Attack","Open World","Yes","Yes","Dagger","src/Valeera.jpeg");
     createCharacter("A'dal","Naaru","Neutral","Other","Higher","0","Outland","BC","None","Can't Attack","Open World","Yes","No","None","src/Adal.webp");
     createCharacter("Xe'ra","Naaru","Neutral","Other","Higher","1",["Azeroth","Argus"],"Legion","None","Can't Attack","Open World","No","No","None","src/Xera.webp");
     createCharacter("Nat Pagle","Human","Neutral","Male","Lower","0",["Azeroth","Draenor"],"Vanilla","None","Can't Attack","Open World","Yes","Yes","Fishing Rod","src/Nat.png");

@@ -204,6 +204,7 @@ function loadAllCharacters() {
     createCharacter("A'dal","Naaru","Neutral","Other","Higher","0","Outland","BC","None","Can't Attack","Open World","Yes","No","None","src/Adal.webp");
     createCharacter("Xe'ra","Naaru","Neutral","Other","Higher","1",["Azeroth","Argus"],"Legion","None","Can't Attack","Open World","No","No","None","src/Xera.webp");
     createCharacter("Nat Pagle","Human","Neutral","Male","Lower","0",["Azeroth","Draenor"],"Vanilla","None","Can't Attack","Open World","Yes","Yes","Fishing Rod","src/Nat.png");
+    createCharacter("Lunara","Dryad","Neutral","Female","Higher","0","Azeroth","Legion","Druid","Can't Attack","Open World","No","Yes","Spear","src/Lunara.png");
 
     // Evil Boss
     createCharacter("Arthas Menethil","Human","Scourge","Male","Lower","1",["Azeroth","Shadowlands"],"WOTLK",["Death Knight","Paladin"],"Fightable",["Open World","Instance"],"Yes","Yes","Sword","src/Arthas.webp");

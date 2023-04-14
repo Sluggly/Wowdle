@@ -120,7 +120,6 @@ function loadAllCharacters() {
     createCharacter("Baine Bloodhoof","Tauren","Horde","Male","Lower","0","Azeroth","Vanilla","Warrior","Can't Attack","Open World","Yes","Yes","Axe","src/Baine.png");
     createCharacter("Rexxar",["Orc","Ogre"],"Horde","Male","Lower","0","Azeroth","BC","Hunter","Can't Attack",["Open World","Instance"],"Yes","Yes","Axe","src/Rexxar.png");
     createCharacter("Vol'Jin","Troll","Horde","Male","Lower","1","Azeroth","Vanilla","Shaman","Can't Attack","None","Yes","Yes","Blade","src/Vol'jin.png");
-    createCharacter("Zul'Jin","Troll","Horde","Male","Lower","1","Azeroth","Vanilla","Warrior","Can't Attack","None","No","Yes","Blade","src/Zul'jin.png");
     createCharacter("Lor'themar Theron","Elf","Horde","Male","Lower","0","Azeroth","BC","Hunter","Killable","Open World","Yes","Yes","Sword","src/Lor'themar.png");
     createCharacter("Jastor Gallywix","Goblin","Horde","Male","Lower","0","Azeroth","Cataclysm","None","Can't Attack","Open World","Yes","Yes","Staff","src/Gallywix.png");
     createCharacter("Varok Saurfang","Orc","Horde","Male","Lower","1","Azeroth","Vanilla","Warrior","Can't Attack","None","Yes","Yes","Axe","src/Varok.png");
@@ -163,6 +162,7 @@ function loadAllCharacters() {
     createCharacter("Yrel","Draenei","Alliance","Female","Lower","0",["Azeroth","Draenor"],"WOD",["Paladin","Priest"],"Can't Fight",["Open World","Instance"],"Yes","Yes","Hammer","src/Yrel.png");
     
     // Neutral
+    createCharacter("Zul'Jin","Troll","Neutral","Male","Lower","1","Azeroth","Vanilla","Warrior","Can't Attack","None","No","Yes","Blade","src/Zul'jin.png");
     createCharacter("Illidan Stormrage","Elf","None","Male","Higher","0",["Azeroth","Outland","Argus"],"BC","Demon Hunter","Killable",["Open World","Instance"],"Yes","Yes","Warglaive","src/Illidan.jpg");
     createCharacter("Lorewalker Cho","Pandaren","None","Male","Lower","0","Azeroth","MOP","None","Can't Attack","Open World","Yes","Yes","None","src/Cho.png");
     createCharacter("Lady VashJ","Naga","None","Female","Higher","1",["Azeroth","Outland","Shadowlands"],"BC","None","Killable",["Open World","Instance"],"No","Yes","Bow","src/VashJ.webp");

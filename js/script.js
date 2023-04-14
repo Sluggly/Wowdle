@@ -212,9 +212,9 @@ function loadAllCharacters() {
     createCharacter("Nefarian","Dragonkin","None","Male","Higher","1","Azeroth","Cataclysm","None","Killable","Instance","No","Yes","None","src/Nefarian.jpg");
     createCharacter("Onyxia","Dragonkin","None","Female","Higher","2","Azeroth","Vanilla","None","Killable","Instance","No","Yes","None","src/Onyxia.png");
     createCharacter("Kael'Thas Sunstrider","Elf","None","Male","Lower","1",["Azeroth","Outland","Shadowlands"],"BC","Mage","Killable",["Open World","Instance"],"Yes","Yes","Sword","src/Kael.jpg");
-    createCharacter("Edwin Vancleef","Human","Defias","Male","Lower","1","Azeroth","Vanilla","Rogue","Can't Attack","None","No","Yes","Dagger","src/Edwin.webp");
+    createCharacter("Edwin Vancleef","Human","Pirate","Male","Lower","1","Azeroth","Vanilla","Rogue","Can't Attack","None","No","Yes","Dagger","src/Edwin.webp");
     createCharacter("Emperor Dagran Thaurissan","Dwarf","None","Male","Lower","1","Azeroth","Vanilla","None","Killable","Instance","No","Yes","Hammer","src/Dagran.jpg");
-    createCharacter("Captain Cookie","Murloc","Defias","Male","Lower","1","Azeroth","Vanilla","None","Killable","Instance","No","Yes","None","src/Cookie.png");
+    createCharacter("Captain Cookie","Murloc","Pirate","Male","Lower","1","Azeroth","Vanilla","None","Killable","Instance","No","Yes","None","src/Cookie.png");
     createCharacter("Princess Theradras","Elemental","None","Female","Higher","1","Azeroth","Vanilla","None","Killable","Instance","No","No","None","src/Theradras.jpg");
     createCharacter("High Inquisitor Whitemane","Human","None","Female","Lower","1","Azeroth","Vanilla",["Priest","Death Knight"],"Killable",["Open World","Instance"],"No","Yes","Staff","src/Whitemane.png");
     createCharacter("Baron Titus Rivendare","Human","Scourge","Male","Lower","1","Azeroth","Vanilla","Death Knight","Killable","Instance","No","Yes","Sword","src/Baron.png");
@@ -259,6 +259,8 @@ function loadAllCharacters() {
     createCharacter("Saphiron",["Undead","Dragonkin"],"Scourge","Male","Lower","3",["Azeroth","Shadowlands"],"WOTLK","None","Killable","Instance","No","No","None","src/Saphiron.webp");
     createCharacter("Syndragosa",["Undead","Dragonkin"],"Scourge","Female","Lower","2","Azeroth","WOTLK","None","Killable","Instance","No","No","None","src/Syndragosa.webp");
     createCharacter("Patchwerk","Undead","Scourge","Male","Lower","1","Azeroth","WOTLK","None","Killable","Instance","No","Yes",["Axe","Hook"],"src/Patchwerk.jpg");
+    createCharacter("Captain Eudora","Vulpera","Pirate","Female","Lower","0","Azeroth","BFA","None","Killable","Instance","No","Yes","Gun","src/Eudora.png");
+    createCharacter("Professor Putricide","Undead","Scourge","Male","Lower","2","Azeroth","WOTLK","None","Killable","Instance","No","Yes","Potions","src/Putricide.png");
 
 }
 

@@ -142,7 +142,7 @@ function loadAllCharacters() {
     createCharacter("Daelin Proudmoore","Human","Alliance","Male","Lower","1","None","None",["Paladin","Warrior"],"Can't Attack","None","No","No","Sword","src/Daelin.webp");
     createCharacter("Khadgar","Human","Alliance","Male","Lower","0",["Azeroth","Draenor","Outland","Argus","Shadowlands"],"Vanilla","Mage","Can't Attack",["Open World","Instance"],"Yes","Yes","Staff","src/Khadgar.png");
     createCharacter("Anduin Wrynn","Human","Alliance","Male","Lower","0",["Azeroth","Shadowlands"],"Vanilla","Priest","Fightable",["Open World","Instance"],"Yes","Yes","Sword","src/Anduin.png");
-    createCharacter("Varian Wrynn","Human","Alliance","Male","Lower","1","Azeroth","Vanilla","Warrior","Can't Attack","None","Yes","Yes","Sword","src/Varian.png");
+    createCharacter("Varian Wrynn","Human","Alliance","Male","Lower","1", ["Azeroth","Draenor"],"Vanilla","Warrior","Can't Attack","None","Yes","Yes","Sword","src/Varian.png");
     createCharacter("Muradin Bronzebeard","Dwarf","Alliance","Male","Lower","0",["Azeroth","Argus"],"Vanilla","Warrior","Killable",["Open World","Instance"],"Yes","No","Hammer","src/Muradin.jpg");
     createCharacter("Brann Bronzebeard","Dwarf","Alliance","Male","Lower","0","Azeroth","Vanilla","None","Can't Attack",["Open World","Instance"],"Yes","Yes","Gun","src/Brann.png");
     createCharacter("Gelbin Mekkatorque","Gnome","Alliance","Male","Lower","0","Azeroth","Vanilla","None","Fightable",["Open World","Instance"],"Yes","Yes",["Robot","Hammer"],"src/Gelbin.png");
@@ -159,7 +159,8 @@ function loadAllCharacters() {
     createCharacter("Alleria Windrunner","Elf","Alliance","Female","Lower","0",["Azeroth","Argus"],"Legion","Hunter","Fightable",["Open World", "Instance"],"Yes","No","Bow","src/Alleria.jpg");
     createCharacter("Maiev Shadowsong","Elf","Alliance","Female","Higher","0",["Azeroth","Outland"],"BC","None","Can't Attack",["Open World", "Instance"],"Yes","Yes","Chakram","src/Maiev.jpg");
     createCharacter("Tirion Fordring","Human","Alliance","Male","Lower","1","Azeroth","WOTLK","Paladin","Killable",["Open World","Instance"],"Yes","Yes","Sword","src/Tirion.png");
-    createCharacter("Yrel","Draenei","Alliance","Female","Lower","0",["Azeroth","Draenor"],"WOD",["Paladin","Priest"],"Can't Fight",["Open World","Instance"],"Yes","Yes","Hammer","src/Yrel.png");
+    createCharacter("Yrel","Draenei","Alliance","Female","Lower","0",["Azeroth","Draenor"],"WOD",["Paladin","Priest"],"Can't Attack",["Open World","Instance"],"Yes","Yes","Hammer","src/Yrel.png");
+    createCharacter("Leeroy Jenkins","Human","Alliance","Male","Lower","0",["Azeroth","Draenor"],"WOD","Paladin","Can't Attack",["Open World","Instance"],"No","Yes","Sword","src/Leeroy.png");
     
     // Neutral
     createCharacter("Zul'Jin","Troll","Neutral","Male","Lower","1","Azeroth","Vanilla","Warrior","Can't Attack","None","No","Yes","Blade","src/Zul'jin.png");
@@ -225,7 +226,7 @@ function loadAllCharacters() {
     createCharacter("C'Thun","Old God","None","Other","Higher","1","Azeroth","Vanilla","None","Fightable","Instance","No","Yes","None","src/Cthun.png");
     createCharacter("Gruul","Gronn","None","Male","Lower","1","Outland","BC","None","Killable","Instance","No","Yes","None","src/Gruul.png");
     createCharacter("Magtheridon","Demon","Burning Legion","Male","Lower","1","Outland","BC","None","Killable","Instance","No","Yes","Blade","src/Magtheridon.png");
-    createCharacter("Archimonde","Demon","Burning Legion","Male","Higher","2",["Argus","Azeroth","Twisting-Nether"],"BC","Warlock","Killable","Instance","No","No","None","src/Archimonde.png");
+    createCharacter("Archimonde","Demon","Burning Legion","Male","Higher","2",["Argus","Azeroth","Twisting-Nether","Draenor"],"BC","Warlock","Killable","Instance","No","No","None","src/Archimonde.png");
     createCharacter("Kil'Jaeden","Demon","Burning Legion","Male","Higher","2",["Argus","Azeroth","Twisting-Nether"],"BC","Warlock","Killable","Instance","No","No","None","src/Kiljaeden.jpg");
     createCharacter("Anub'arak","Undead","Scourge","Male","Lower","1","Azeroth","WOTLK","None","Killable","Instance","No","Yes","None","src/Anubarak.webp");
     createCharacter("Jailer/Zovaal","Eternal One","None","Male","Higher","1","Shadowlands","Shadowlands","None","Killable",["Open World","Instance"],"No","Yes","Hammer","src/Jailer.png");

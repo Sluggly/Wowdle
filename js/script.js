@@ -246,7 +246,7 @@ function loadAllCharacters() {
     createCharacter("Lei Shen","Mogu","None","Male","Higher","1","Azeroth","MOP","None","Killable","Instance","No","No","Axe","src/Leishen.webp");
     createCharacter("Blackhand","Orc","None","Male","Lower","1","Draenor","WOD","Warrior","Killable","Instance","No","No","Hammer","src/Blackhand.jpg");
     createCharacter("Helya","Val'Kyr","None","Female","Higher","0",["Azeroth","Shadowlands"],"Legion","None","Fightable",["Open World","Instance"],"No","No","None","src/Helya.jpg");
-    createCharacter("Xavius","Satyr","Burning Legion","Male","Lower","1","Azeroth","Vanilla",["Mage","Warlock"],"Killable",["Open World","Instance"],"No","Yes","None","src/Xavius.png");
+    createCharacter("Xavius","Satyr","Burning Legion","Male","Higher","1","Azeroth","Vanilla",["Mage","Warlock"],"Killable",["Open World","Instance"],"No","Yes","None","src/Xavius.png");
     createCharacter("Gul'Dan","Orc","Burning Legion","Male","Lower","2",["Azeroth","Draenor","Outland"],"WOD","Warlock","Killable",["Open World","Instance"],"No","Yes","Staff","src/Guldan.jpg");
     createCharacter("Tichondrius","Demon","Scourge","Male","Lower","1","Azeroth","Cataclysm","None","Killable","Instance","No","No","None","src/Tichondrius.png");
     createCharacter("King Mechagon","Robot","None","Male","Lower","1","Azeroth","BFA","None","Killable","Instance","No","No","Robot","src/Mechagon.jpg");

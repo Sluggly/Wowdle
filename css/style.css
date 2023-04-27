@@ -4,6 +4,7 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
+    user-select: none;
 }
 
 body::before {
@@ -137,6 +138,7 @@ body::before {
     height: 84px;
     margin: 10px;
     border: 2px solid #000;
+    border-color: rgb(230, 182, 182);
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -147,6 +149,7 @@ body::before {
     align-items: center;
     text-align: center;
     overflow: hidden;
+    user-select: none;
 }
 
 .info-box p {
@@ -171,18 +174,20 @@ body::before {
 }
 
 .info-box.true {
-    border-color: rgb(230, 182, 182);
     background-color: rgb(14, 165, 14);
 }
 
 .info-box.false {
-    border-color: rgb(230, 182, 182);
     background-color: red;
 }
 
 .info-box.partial {
-    border-color: rgb(230, 182, 182);
     background-color: rgb(32, 43, 36);
+}
+
+.info-box.clue {
+    background-color: rgb(10, 41, 21);
+    cursor: pointer;
 }
 
 .selection-menu {

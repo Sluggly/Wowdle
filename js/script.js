@@ -1,5 +1,6 @@
 var characterList = []; // List of guessable characters
 var characterDict = []; // Dicitonnary of characters: String(name) -> Character
+var clueFound = []; // Dictionnary of clues: String(category) -> boolean
 var options; // Classe Options de l'utilisateur
 const tooltipSpan = document.getElementById("tooltip");
 
@@ -117,7 +118,7 @@ function loadAllCharacters() {
     createCharacter("Thrall","Orc","Horde","Male","Lower","0",["Azeroth","Outland","Draenor","Shadowlands"],"Vanilla",["Shaman","Warrior"],"Can't Attack","Open World","Yes","Yes",["Axe","Hammer"],"src/Thrall.webp");
     createCharacter("Sylvanas Windrunner","Undead","Horde","Female","Lower","3","Shadowlands","Vanilla","Hunter","Fightable",["Open World","Instance"],"Yes","Yes",["Bow","Dagger"],"src/Sylvanas.png");
     createCharacter("Cairne Bloodhoof","Tauren","Horde","Male","Lower","1","Azeroth","Vanilla","Warrior","Can't Attack","None","Yes","Yes","Axe","src/Cairne.png");
-    createCharacter("Baine Bloodhoof","Tauren","Horde","Male","Lower","0","Azeroth","Vanilla","Warrior","Can't Attack","Open World","Yes","Yes","Axe","src/Baine.png");
+    createCharacter("Baine Bloodhoof","Tauren","Horde","Male","Lower","0",["Azeroth","Shadowlands"],"Vanilla","Warrior","Can't Attack","Open World","Yes","Yes","Axe","src/Baine.png");
     createCharacter("Rexxar",["Orc","Ogre"],"Horde","Male","Lower","0","Azeroth","BC","Hunter","Can't Attack",["Open World","Instance"],"Yes","Yes","Axe","src/Rexxar.png");
     createCharacter("Vol'Jin","Troll","Horde","Male","Lower","1","Azeroth","Vanilla","Shaman","Can't Attack","None","Yes","Yes","Blade","src/Vol'jin.png");
     createCharacter("Lor'themar Theron","Elf","Horde","Male","Lower","0","Azeroth","BC","Hunter","Killable","Open World","Yes","Yes","Sword","src/Lor'themar.png");
@@ -304,6 +305,7 @@ var numberOfGuess = 0;
 
 function resetSeed() {
     options.gameStarted = false;
+    resetClueFound();
     numberOfGuess = 0;
     characterDict = [];
     characterList = [];
@@ -321,6 +323,7 @@ function resetSeed() {
     searchDiv.style.opacity = 100;
     searchDiv.style.pointerEvents = "auto";
     displayColorCoding();
+    loadGameHeaders();
 }
 
 function compare(a,b) {
@@ -385,7 +388,7 @@ function updateSearch(searchValue) {
     selectionMenu.scrollTop = 0;
 }
 
-function createBox(guessValue,selectedValue) {
+function createBox(guessValue,selectedValue,categorie) {
     let boxDiv = document.createElement("div");
     let sizeText;
     if (Array.isArray(guessValue)) {
@@ -409,7 +412,10 @@ function createBox(guessValue,selectedValue) {
             if (!selectedValue.includes(elem)) { isSame = false; }
             else { isPartial = true; }
         }
-        if (isSame) { boxDiv.className = "info-box true"; }
+        if (isSame) { 
+            boxDiv.className = "info-box true";
+            if (categorie != null) { clueFound[categorie] = true; }
+        }
         else if (isPartial) { boxDiv.className = "info-box partial"; }
         else { boxDiv.className = "info-box false"; }
         for (const elem of guessValue) {
@@ -444,7 +450,10 @@ function createBox(guessValue,selectedValue) {
         boxDiv.appendChild(tmpP);
     }
     else if ((!Array.isArray(guessValue))&&(!Array.isArray(selectedValue))) { // Les deux ne sont pas array
-        if (guessValue == selectedValue) { boxDiv.className = "info-box true"; }
+        if (guessValue == selectedValue) { 
+            boxDiv.className = "info-box true";
+            if (categorie != null) { clueFound[categorie] = true; }
+        }
         else { boxDiv.className = "info-box false"; }
         let customSize = sizeText;
         if (guessValue.length > 8) { customSize = "14px"; }
@@ -482,7 +491,7 @@ function guessCharacter() {
         for (const categorie in options.clues) {
             if (options.clues.hasOwnProperty(categorie)) {
                 if (options.clues[categorie]) {
-                    newBoxLine.appendChild(createBox(character.informations[categorie],selectedCharacter.informations[categorie]));
+                    newBoxLine.appendChild(createBox(character.informations[categorie],selectedCharacter.informations[categorie],categorie));
                 }
                 
             }
@@ -514,6 +523,7 @@ function playRevealAnimation(infoDiv) {
     const animationInterval = setInterval(() => {
         if (boxIndex >= boxes.length) {
           clearInterval(animationInterval);
+          updateClues();
           return;
         }
         boxes[boxIndex].classList.remove('hide-info-box');
@@ -543,6 +553,8 @@ function winScreen() {
     let searchDiv = document.getElementById("searchDiv");
     searchDiv.style.opacity = 0;
     searchDiv.style.pointerEvents = "none";
+    let clueZone = document.getElementById("clueZone");
+    clueZone.innerHTML = "";
 }
 
 function closeVictoryScreen() {
@@ -569,7 +581,7 @@ function closeOptionsScreen() {
 }
 
 function displayColorCoding() {
-    if (numberOfGuess > 3) { document.querySelector('.bottom').style.display = 'none'; }
+    if (numberOfGuess > 2) { document.querySelector('.bottom').style.display = 'none'; }
     else { document.querySelector('.bottom').style.display = 'flex'; }
 }
 
@@ -585,11 +597,69 @@ function loadGameHeaders() {
     let headerDiv = document.getElementById("headerDiv");
     headerDiv.innerHTML = "";
     headerDiv.appendChild(createHeaderH2("Character","Character"));
+    let clueZone = document.getElementById("clueZone");
+    clueZone.innerHTML = "";
+    let divCharacterClue = document.createElement("div");
+    divCharacterClue.className = "character-info";
+    let boxDiv = document.createElement("div");
+    boxDiv.className = "info-box clue";
+    boxDiv.setAttribute("onclick", 'revealClue(this)');
+    let tmpP = document.createElement("p");
+    tmpP.innerHTML = "Click to reveal!";
+    boxDiv.setAttribute("value","Character");
+    boxDiv.appendChild(tmpP);
+    divCharacterClue.appendChild(boxDiv);
     for (const categorie in options.clues) {
         if (options.clues.hasOwnProperty(categorie)) {
-            if (options.clues[categorie]) { headerDiv.appendChild(createHeaderH2(options.cluesText[categorie],categorie)); }
+            if (options.clues[categorie]) {
+                headerDiv.appendChild(createHeaderH2(options.cluesText[categorie],categorie));
+                let boxDiv = document.createElement("div");
+                boxDiv.className = "info-box clue";
+                let tmpP = document.createElement("p");
+                tmpP.innerHTML = "Click to reveal!";
+                boxDiv.setAttribute("value",categorie);
+                boxDiv.id = "clue" + categorie;
+                boxDiv.setAttribute("onclick", 'revealClue(this)');
+                boxDiv.appendChild(tmpP);
+                divCharacterClue.appendChild(boxDiv);
+            }
         }
     }
+    clueZone.appendChild(divCharacterClue);
+}
+
+function revealClue(box) {
+    options.gameStarted = true;
+    let clueZone = document.getElementById("clueZone").firstChild;
+    let categorie = box.getAttribute("value");
+    let newBox;
+    if (categorie == "Character") {
+        newBox = document.createElement("div");
+        newBox.className = "info-box true";
+        let iconBox = document.createElement("img");
+        iconBox.src = selectedCharacter.icon;
+        newBox.appendChild(iconBox);
+    }
+    else {
+        newBox = createBox(selectedCharacter.informations[categorie],selectedCharacter.informations[categorie]);
+    }
+    clueZone.replaceChild(newBox,box);
+    newBox.classList.remove('hide-info-box');
+    newBox.classList.add('show-info-box');
+}
+
+function updateClues() {
+    for (const categorie in options.clues) {
+        if (options.clues.hasOwnProperty(categorie)) {
+            if (clueFound[categorie] == true) {
+                let clueDiv = document.getElementById("clue"+categorie);
+                if (clueDiv != null) {
+                    revealClue(clueDiv);
+                }
+            }
+        }
+    }
+
 }
 
 function createOptionSelection(text,tooltip,selectedBool) {
@@ -633,8 +703,17 @@ function loadOptionsSelection() {
     }
 }
 
+function resetClueFound() {
+    for (const categorie in options.clues) {
+        if (options.clues.hasOwnProperty(categorie)) {
+            clueFound[categorie] = false;
+        }
+    }
+}
+
 function setupGame() {
     options = new Options();
+    resetClueFound();
     loadGameHeaders();
     document.addEventListener('mousemove',function(e) {
         tooltipSpan.style.top = (e.pageY + 20) + 'px';

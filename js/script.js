@@ -553,8 +553,8 @@ function winScreen() {
     let searchDiv = document.getElementById("searchDiv");
     searchDiv.style.opacity = 0;
     searchDiv.style.pointerEvents = "none";
-    let clueZone = document.getElementById("clueZone");
-    clueZone.innerHTML = "";
+    let clueZoneDiv = document.getElementById("clueZoneDiv");
+    clueZoneDiv.innerHTML = "";
 }
 
 function closeVictoryScreen() {
@@ -597,8 +597,8 @@ function loadGameHeaders() {
     let headerDiv = document.getElementById("headerDiv");
     headerDiv.innerHTML = "";
     headerDiv.appendChild(createHeaderH2("Character","Character"));
-    let clueZone = document.getElementById("clueZone");
-    clueZone.innerHTML = "";
+    let clueZoneDiv = document.getElementById("clueZoneDiv");
+    clueZoneDiv.innerHTML = "";
     let divCharacterClue = document.createElement("div");
     divCharacterClue.className = "character-info";
     let boxDiv = document.createElement("div");
@@ -625,12 +625,12 @@ function loadGameHeaders() {
             }
         }
     }
-    clueZone.appendChild(divCharacterClue);
+    clueZoneDiv.appendChild(divCharacterClue);
 }
 
 function revealClue(box) {
     options.gameStarted = true;
-    let clueZone = document.getElementById("clueZone").firstChild;
+    let clueZoneDiv = document.getElementById("clueZoneDiv").firstChild;
     let categorie = box.getAttribute("value");
     let newBox;
     if (categorie == "Character") {
@@ -643,7 +643,7 @@ function revealClue(box) {
     else {
         newBox = createBox(selectedCharacter.informations[categorie],selectedCharacter.informations[categorie]);
     }
-    clueZone.replaceChild(newBox,box);
+    clueZoneDiv.replaceChild(newBox,box);
     newBox.classList.remove('hide-info-box');
     newBox.classList.add('show-info-box');
 }
